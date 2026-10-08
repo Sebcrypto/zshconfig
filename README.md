@@ -9,9 +9,14 @@ configurations de tmux et Ghostty.
 
 ```sh
 sudo apt install -y git
-git clone <URL-DU-DÉPÔT> ~/dotfiles
+git clone ssh://git@ssh.git.studio89.cloud/dev/ConfigTerminal.git ~/dotfiles
 ~/dotfiles/install.sh
 ```
+
+Le clone passe par SSH : la machine doit avoir une clé autorisée sur le
+serveur git. Pour une nouvelle machine, crée la clé avec
+`ssh-keygen -t ed25519`, affiche-la avec `cat ~/.ssh/id_ed25519.pub` et
+ajoute-la dans les clés SSH de ton compte sur le serveur.
 
 Le script demande le mot de passe pour apt, puis pour faire de zsh le shell
 par défaut. Ouvre ensuite un nouveau terminal.

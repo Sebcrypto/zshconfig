@@ -9,14 +9,12 @@ configurations de tmux et Ghostty.
 
 ```sh
 sudo apt install -y git
-git clone ssh://git@ssh.git.studio89.cloud/dev/ConfigTerminal.git ~/dotfiles
+git clone https://git.studio89.cloud/dev/ConfigTerminal.git ~/dotfiles
 ~/dotfiles/install.sh
 ```
 
-Le clone passe par SSH : la machine doit avoir une clé autorisée sur le
-serveur git. Pour une nouvelle machine, crée la clé avec
-`ssh-keygen -t ed25519`, affiche-la avec `cat ~/.ssh/id_ed25519.pub` et
-ajoute-la dans les clés SSH de ton compte sur le serveur.
+Le dépôt est public sur le réseau : le clone et les `git pull` se font en
+HTTPS sans identifiant.
 
 Le script demande le mot de passe pour apt, puis pour faire de zsh le shell
 par défaut. Ouvre ensuite un nouveau terminal.
@@ -49,6 +47,17 @@ qui pointent dessus), puis :
 ```sh
 cd ~/dotfiles && git commit -am "Description du changement" && git push
 ```
+
+Pour pousser, la machine passe par SSH. À faire une fois sur chaque machine
+d'où tu modifies la config :
+
+```sh
+cd ~/dotfiles && git remote set-url --push origin ssh://git@ssh.git.studio89.cloud/dev/ConfigTerminal.git
+```
+
+Elle doit aussi avoir une clé SSH autorisée sur le serveur git : crée-la avec
+`ssh-keygen -t ed25519`, affiche-la avec `cat ~/.ssh/id_ed25519.pub` et
+ajoute-la dans les clés SSH de ton compte sur le serveur.
 
 | Fichier du dépôt   | Emplacement sur la machine            |
 |--------------------|---------------------------------------|

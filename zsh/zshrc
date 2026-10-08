@@ -1,0 +1,22 @@
+# Configuration zsh (versionnée dans ~/dotfiles, liée depuis ~/.zshrc).
+# Les réglages propres à une seule machine vont dans ~/.zshrc.local.
+
+# Invite instantanée de Powerlevel10k. Doit rester en haut du fichier : ce qui
+# demande une saisie (mot de passe, confirmation) doit être placé au-dessus.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
+export ZSH="$HOME/.oh-my-zsh"
+ZSH_THEME="powerlevel10k/powerlevel10k"
+
+# zsh-syntax-highlighting doit rester le dernier plugin de la liste
+plugins=(git colored-man-pages colorize zsh-autosuggestions zsh-syntax-highlighting)
+
+source $ZSH/oh-my-zsh.sh
+
+# Réglages de l'invite : relancer « p10k configure » pour les changer
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# Réglages propres à cette machine (non versionnés)
+[[ ! -f ~/.zshrc.local ]] || source ~/.zshrc.local

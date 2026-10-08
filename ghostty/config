@@ -1,0 +1,26 @@
+# Configuration Ghostty (versionnée dans ~/dotfiles).
+# Toutes les options : ghostty +show-config --default --docs
+# Recharger après modification : Ctrl+Shift+,
+
+# Apparence (aperçu des thèmes : ghostty +list-themes)
+theme = Catppuccin Mocha
+window-padding-x = 6
+window-padding-y = 4
+
+# Le texte sélectionné est copié directement dans le presse-papiers
+copy-on-select = clipboard
+
+# Se déplacer entre les panneaux (Ctrl+Alt+flèches est pris par GNOME)
+keybind = alt+arrow_left=goto_split:left
+keybind = alt+arrow_right=goto_split:right
+keybind = alt+arrow_up=goto_split:up
+keybind = alt+arrow_down=goto_split:down
+
+# Fermer seulement le panneau actif (Ctrl+Shift+W ferme tout l'onglet)
+keybind = ctrl+shift+x=close_surface
+
+# Remettre tous les panneaux à la même taille
+keybind = ctrl+shift+equal=equalize_splits
+
+# Ouvrir tout l'historique du terminal dans l'éditeur de texte
+keybind = ctrl+shift+h=write_scrollback_file:open

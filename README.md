@@ -9,11 +9,11 @@ configurations de tmux et Ghostty.
 
 ```sh
 sudo apt install -y git
-git clone https://git.studio89.cloud/dev/ConfigTerminal.git ~/dotfiles
+git clone https://github.com/Sebcrypto/zshconfig.git ~/dotfiles
 ~/dotfiles/install.sh
 ```
 
-Le dépôt est public sur le réseau : le clone et les `git pull` se font en
+Le dépôt est public sur GitHub : le clone et les `git pull` se font en
 HTTPS sans identifiant.
 
 Le script demande le mot de passe pour apt, puis pour faire de zsh le shell
@@ -52,12 +52,12 @@ Pour pousser, la machine passe par SSH. À faire une fois sur chaque machine
 d'où tu modifies la config :
 
 ```sh
-cd ~/dotfiles && git remote set-url --push origin ssh://git@ssh.git.studio89.cloud/dev/ConfigTerminal.git
+cd ~/dotfiles && git remote set-url --push origin git@github.com:Sebcrypto/zshconfig.git
 ```
 
-Elle doit aussi avoir une clé SSH autorisée sur le serveur git : crée-la avec
+Elle doit aussi avoir une clé SSH autorisée sur GitHub : crée-la avec
 `ssh-keygen -t ed25519`, affiche-la avec `cat ~/.ssh/id_ed25519.pub` et
-ajoute-la dans les clés SSH de ton compte sur le serveur.
+ajoute-la dans les clés SSH de ton compte GitHub.
 
 | Fichier du dépôt   | Emplacement sur la machine            |
 |--------------------|---------------------------------------|
